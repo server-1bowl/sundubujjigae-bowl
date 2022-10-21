@@ -12,4 +12,18 @@ router.get("/", (req: Request, res: Response) => {
     });
 });
 
+router.post("/", (req:Request, res:Response)=>{
+    const body=req.body;
+
+    users.push(body);
+
+    console.log(users);
+
+    return res.status(200).json({
+        status:200,
+        message:"유저 추가 성공",
+        data:users
+    });
+});
+
 module.exports = router;
